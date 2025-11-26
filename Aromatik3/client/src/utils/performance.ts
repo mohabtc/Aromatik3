@@ -22,12 +22,8 @@ export const cacheSettings = {
   }
 };
 
-// Critical resource hints
+// Critical resource hints (images only - fonts loaded via CSS @import)
 export const criticalResources = [
-  // Fonts
-  'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&display=swap',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap',
-  
   // Hero images for each page
   'https://images.unsplash.com/photo-1541643600914-78b084683601', // Hero background
   'https://images.unsplash.com/photo-1544551763-46a013bb70d5', // Creed background
@@ -73,23 +69,18 @@ export function measurePerformance() {
   }
 }
 
-// Preload critical resources
+// Preload critical resources (images only)
 export function preloadCriticalResources() {
   if (typeof window === 'undefined') return;
 
   criticalResources.forEach(resource => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    
-    if (resource.includes('fonts.googleapis.com')) {
-      link.as = 'style';
-      link.href = resource;
-    } else if (resource.includes('images.unsplash.com')) {
+    if (resource.includes('images.unsplash.com')) {
+      const link = document.createElement('link');
+      link.rel = 'preload';
       link.as = 'image';
       link.href = `${resource}?auto=format&fit=crop&w=1200&q=85`;
+      document.head.appendChild(link);
     }
-    
-    document.head.appendChild(link);
   });
 }
 

@@ -4,6 +4,36 @@ import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 import SEOHead from '@/components/seo-head';
 
+const personSchema = {
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Mohamed Belgartit Sabba",
+  "jobTitle": "Fundador & CEO",
+  "image": "https://aromatikbarcelona.com/images/mohamed-belgartit-sabba.jpeg",
+  "url": "https://www.aromatikbarcelona.com/liderazgo",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "ESERP Business School"
+  },
+  "knowsAbout": ["Comercio Internacional", "HealthTech", "Retail Automatizado", "Vending"],
+  "worksFor": [
+    {
+      "@type": "Organization",
+      "name": "Aromatik Barcelona",
+      "url": "https://www.aromatikbarcelona.com"
+    },
+    {
+      "@type": "Organization",
+      "name": "Euro Orthopedic",
+      "url": "https://www.eurorthopedic.com"
+    }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/mohamed-belgartit-sabba-075a6632b/",
+    "https://www.crunchbase.com/person/mohamed-belgartit-sabba"
+  ]
+};
+
 export default function Liderazgo() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -13,6 +43,17 @@ export default function Liderazgo() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(personSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
   }, []);
 
   return (
@@ -74,13 +115,54 @@ export default function Liderazgo() {
       </section>
 
       <section className="py-32" style={{ maxWidth: '1100px', margin: '0 auto', padding: '128px 48px' }}>
-        <div className="max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8 mb-24"
+            className="lg:col-span-4"
+          >
+            <div 
+              className="relative overflow-hidden"
+              style={{ borderRadius: '8px' }}
+            >
+              <img 
+                src="/images/mohamed-belgartit-sabba.jpeg"
+                alt="Mohamed Belgartit Sabba - Fundador y CEO de Aromatik Barcelona"
+                className="w-full h-auto object-cover"
+                style={{ 
+                  aspectRatio: '3/4',
+                  filter: 'grayscale(20%)'
+                }}
+              />
+              <div 
+                className="absolute bottom-0 left-0 right-0 p-6"
+                style={{
+                  background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)'
+                }}
+              >
+                <p 
+                  style={{
+                    color: '#D4AF37',
+                    fontSize: '12px',
+                    fontFamily: 'Inter, sans-serif',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em'
+                  }}
+                >
+                  Fundador & CEO
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="lg:col-span-8 space-y-8"
           >
             <p 
               className="text-lg leading-relaxed"

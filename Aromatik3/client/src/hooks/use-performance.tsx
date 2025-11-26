@@ -41,20 +41,6 @@ export function usePerformance() {
 // Hook para precargar recursos críticos
 export function usePreloadCriticalResources() {
   useEffect(() => {
-    // Precargar fuentes críticas
-    const fonts = [
-      'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&display=swap',
-      'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'
-    ];
-
-    fonts.forEach(fontUrl => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'style';
-      link.href = fontUrl;
-      document.head.appendChild(link);
-    });
-
     // Precargar imágenes críticas (hero images)
     const criticalImages = [
       'https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
