@@ -3,7 +3,6 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import PerformanceMonitor from "@/components/performance-monitor";
 import { useScrollReset } from "@/hooks/use-scroll-reset";
 import Home from "@/pages/home";
 import AngelsShare from "@/pages/angels-share";
@@ -56,7 +55,6 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
-        <PerformanceMonitor />
       </TooltipProvider>
     </QueryClientProvider>
   );

@@ -3,6 +3,14 @@
 ## Overview
 AROMATIK BARCELONA is a luxury web application for selling niche perfume decants and premium brands. The brand's vision is to transform exclusive products into a personal and immediate experience, focusing on self-expression. The project aims to establish a sophisticated online presence, offering a curated selection of fragrances and a seamless user experience.
 
+## Recent Changes (Nov 2024)
+- Removed video from hero section - now uses static animated text
+- Fixed mobile navigation z-index and touch interactions
+- Added leadership page (/liderazgo) with Mohamed Belgartit Sabba bio and JSON-LD schema
+- Performance optimizations: removed unused UI components, cleaned up hooks and utils
+- Removed performance monitor debug tool
+- Cleaned up unused video files and documentation
+
 ## User Preferences
 - **Comunicación**: Lenguaje simple y cotidiano, sin tecnicismos
 - **Idioma principal**: Español

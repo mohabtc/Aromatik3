@@ -1,6 +1,5 @@
 import { useEffect, useState, lazy, Suspense } from 'react';
 import { useScrollPosition } from '@/hooks/use-scroll-trigger';
-import { usePreloadCriticalResources } from '@/hooks/use-performance';
 import Navigation from '@/components/navigation';
 import HeroSection from '@/components/hero-section';
 import SEOHead from '@/components/seo-head';
@@ -23,9 +22,6 @@ const SectionSkeleton = () => (
 export default function Home() {
   const scrollY = useScrollPosition();
   const [isScrolled, setIsScrolled] = useState(false);
-
-  // Preload critical resources
-  usePreloadCriticalResources();
 
   useEffect(() => {
     setIsScrolled(scrollY > 50);
