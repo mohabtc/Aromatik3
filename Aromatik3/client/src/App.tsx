@@ -18,6 +18,7 @@ import EnviosDevoluciones from "@/pages/envios-devoluciones";
 import Contacto from "@/pages/contacto";
 import Terminos from "@/pages/terminos";
 import Privacy from "@/pages/privacy";
+import Liderazgo from "@/pages/liderazgo";
 import NotFound from "@/pages/not-found";
 
 /**
@@ -43,6 +44,7 @@ function Router() {
       <Route path="/contacto" component={Contacto} />
       <Route path="/terminos" component={Terminos} />
       <Route path="/privacy" component={Privacy} />
+      <Route path="/liderazgo" component={Liderazgo} />
       <Route component={NotFound} />
     </Switch>
   );

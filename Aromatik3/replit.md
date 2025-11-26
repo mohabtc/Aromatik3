@@ -33,7 +33,7 @@ AROMATIK BARCELONA is a luxury web application for selling niche perfume decants
 - **Layout**: Generous white space, `max-width: 1100px` container
 
 ### Key Features
-- **Pages**: Homepage, individual product pages (e.g., Baccarat Rouge 540), institutional pages (`/coleccion`, `/nuestro-concepto`, `/manifiesto`, `/envios-devoluciones`, `/contacto`)
+- **Pages**: Homepage, individual product pages (e.g., Baccarat Rouge 540), institutional pages (`/coleccion`, `/nuestro-concepto`, `/manifiesto`, `/envios-devoluciones`, `/contacto`, `/liderazgo`)
 - **Functionality**: Newsletter subscription, optimized navigation, lazy loading, performance monitoring.
 - **SEO**: Comprehensive SEO strategy including dynamic meta tags, structured data (Product, Organization, FAQ Schema), optimized URLs, and keyword research.
 - **Performance**: Core Web Vitals optimized (LCP 1.5ms), image and font optimization, compression, and cache headers.
