@@ -1,0 +1,36 @@
+Tu misión es optimizar el nuevo vídeo de la Hero Section de la Homepage. El objetivo es asegurar un rendimiento de carga ultra rápido, una visualización perfecta en todos los dispositivos y una lógica de reproducción inteligente que respete al usuario, todo ello manteniendo la máxima calidad visual.
+Lista de Tareas de Ejecución (Órdenes Directas):
+1. Optimización del Archivo de Vídeo (Rendimiento Crítico)
+ * Compresión y Formato: El archivo de vídeo subido localmente debe ser procesado. Comprímelo para reducir su peso al mínimo posible sin una pérdida de calidad visible. Asegúrate de que está en formato MP4 con el códec H.264 para máxima compatibilidad.
+ * Atributos de Reproducción: La etiqueta <video> en el HTML debe incluir obligatoriamente los atributos: autoplay, muted, y playsinline. Esto es innegociable para asegurar la auto-reproducción en la mayoría de navegadores y dispositivos móviles.
+2. Implementación de Lógica "Play Once" (Respeto al Usuario)
+ * Objetivo: El vídeo de introducción solo debe reproducirse automáticamente la primera vez que un usuario visita el sitio desde un dispositivo. No debe repetirse en cada recarga de la página.
+ * Acción: Implementa la siguiente lógica usando el localStorage del navegador:
+   * Al cargar la página: El script debe comprobar si existe localStorage.getItem('introVideoPlayed') y si su valor es true.
+   * Si es true: El contenedor del vídeo debe estar oculto (display: none) y en su lugar debe mostrarse directamente el contenido estático final de la Hero Section (el texto "El perfume es libertad.").
+   * Si es false o no existe: Muestra y reproduce el vídeo.
+   * Al finalizar el vídeo (usando el evento onended de JavaScript), ejecuta dos acciones:
+     * Oculta el contenedor del vídeo y muestra el contenido estático con una transición suave (fade in).
+     * Establece el valor en el almacenamiento local: localStorage.setItem('introVideoPlayed', 'true').
+3. Adaptación y Visualización en Móvil (Responsive Profesional)
+ * Problema: Un vídeo en formato 16:9 (horizontal) se verá mal en pantallas móviles (verticales), con grandes franjas negras o un recorte torpe.
+ * Solución (Ejecución Obligatoria): Debes implementar una solución de vídeo adaptativo.
+   * Prepara dos archivos de vídeo: Necesitarás una versión para escritorio (hero-desktop.mp4 en 16:9) y una versión optimizada para móvil (hero-mobile.mp4 en formato vertical 9:16).
+   * Implementa el video source adaptativo: Usa la etiqueta <video> con dos elementos <source> dentro, cada uno con un media query para que el navegador descargue SOLO el archivo correcto:
+     <video autoplay muted playsinline>
+  <source src="path/to/hero-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
+  <source src="path/to/hero-desktop.mp4" type="video/mp4" media="(min-width: 768px)">
+</video>
+
+   * Aplica el CSS de Relleno: El vídeo debe llenar siempre la sección Hero sin deformarse. Aplica este CSS a la etiqueta <video>:
+     video {
+  width: 100%;
+  height: 100vh; /* O la altura de tu Hero Section */
+  object-fit: cover;
+}
+
+4. Gestión de la Interfaz y Experiencia de Usuario (UI/UX)
+ * Barra de Navegación: Confirma que la barra de navegación (header con el logo y los menús) está oculta mientras el vídeo se reproduce. Inmediatamente después de que el vídeo termine y aparezca el texto estático, la barra de navegación debe reaparecer con una transición suave de fade in (duración: 300ms).
+ * Botón para Omitir (Recomendación de Experto): Añade un botón de texto discreto en una de las esquinas (ej. "Saltar Intro") que permita al usuario omitir el vídeo si lo desea. Al hacer clic, debe ejecutar la misma lógica que cuando el vídeo termina.
+Directiva Final:
+La primera impresión solo ocurre una vez. Esta introducción en vídeo debe ser técnicamente perfecta: rápida, adaptativa e inteligente. No aceptaré una solución que penalice los tiempos de carga o que ofrezca una mala experiencia en dispositivos móviles. Procede con la optimización.

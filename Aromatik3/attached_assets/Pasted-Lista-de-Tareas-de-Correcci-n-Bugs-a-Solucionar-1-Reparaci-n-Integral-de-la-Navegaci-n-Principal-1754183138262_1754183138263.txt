@@ -1,0 +1,44 @@
+Lista de Tareas de Corrección (Bugs a Solucionar):
+1. Reparación Integral de la Navegación Principal (Header)
+Problema: Los enlaces del menú principal (Inicio, Colección, Proceso, Contacto) no funcionan o no dirigen a las páginas correctas.
+
+Acción: Revisa el componente del Header. Enlaza cada elemento del menú a su URL correspondiente según el directorio de arriba. El logo de "AROMATIK BARCELONA" en la esquina superior izquierda también debe funcionar como un enlace a la página de Inicio (/home).
+
+2. Enlazado de Botones y CTAs (Llamadas a la Acción)
+Problema: Múltiples botones a lo largo de la web son inactivos.
+
+Acción: Realiza una revisión de todos los botones y enlaces interactivos en todas las páginas y conéctalos a sus destinos correctos. Presta especial atención a:
+
+En la página /biblioteca, cada botón "Explorar Composición" debe enlazar a la página de producto específica.
+
+En la Homepage, los botones del carrusel de perfumes deben enlazar a sus respectivas páginas.
+
+En la página /manifiesto, el enlace "Comienza tu colección" debe dirigir a /biblioteca.
+
+En la página de Envíos, el botón "Contactar con Soporte" debe dirigir a /contacto.
+
+3. Corrección del Comportamiento del Scroll (Scroll Reset)
+Problema: Al navegar entre páginas, la posición del scroll se mantiene. Si el usuario está abajo en la Homepage y hace clic en "Colección", aparece en mitad de la página de Colección.
+
+Acción: Implementa una solución para que la posición del scroll se resetee automáticamente a la parte superior de la página (posición Y: 0) cada vez que se produce un cambio de ruta. La navegación entre páginas debe sentirse siempre como si se llegara a una página nueva, empezando desde arriba.
+
+4. Reparación de la Barra de Navegación en Móvil
+Problema: La barra de navegación en la vista móvil está "bugueada".
+
+Acción: Depura y repara el componente de navegación móvil.
+
+El icono de "menú hamburguesa" debe abrir y cerrar el menú de forma fluida y sin fallos.
+
+Todos los enlaces dentro del menú desplegable móvil deben ser 100% funcionales y respetar el mapeo de URLs.
+
+Asegúrate de que el menú no cause problemas de visualización (ej. que no se pueda cerrar, que se superponga incorrectamente con el contenido, etc.).
+
+Directiva Final de Ejecución:
+La funcionalidad es la base de la confianza del usuario. Quiero un sitio web que funcione con la misma precisión y fiabilidad que un reloj suizo. Después de ejecutar estas correcciones, realiza una prueba final de cada enlace y cada botón para confirmar que la web es completamente navegable. Procede a la depuración.
+
+
+
+
+
+
+

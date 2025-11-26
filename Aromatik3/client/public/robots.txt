@@ -1,0 +1,39 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aromatikbarcelona.com/sitemap.xml
+
+# Optimizaciones para SEO
+Crawl-delay: 1
+
+# Permitir crawling de assets importantes
+Allow: /images/
+Allow: /favicon.svg
+Allow: /favicon.png
+
+# Páginas prioritarias para crawling
+Allow: /
+Allow: /coleccion
+Allow: /baccarat-rouge-540
+Allow: /tom-ford-lost-cherry
+Allow: /creed-millesime-imperial
+Allow: /xerjoff-naxos
+Allow: /angels-share
+
+# Disallow development artifacts (si existieran)
+Disallow: /dev/
+Disallow: /*.json$
+Disallow: /*?debug=*
+
+# Google-specific optimizations
+User-agent: Googlebot
+Allow: /
+
+# Bing optimizations  
+User-agent: Bingbot
+Allow: /
+
+# Yandex optimizations
+User-agent: YandexBot
+Allow: /
